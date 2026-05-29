@@ -67,6 +67,8 @@ Examples:
 Tag matching tolerates optional leading `#` on tag segments, so `#Parent::#Child` and `Parent::Child` resolve to the same hierarchy.
 If a tag source is left empty on purpose, the widget stays saveable as a placeholder, shows empty rings with `Tag Empty`, and clicking that dashboard card opens the standalone tag picker.
 
+![Activity Rings screenshot](images/screenshot2.png)
+
 ### Ring Semantics
 
 Each ring has:
