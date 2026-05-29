@@ -19,7 +19,7 @@ The add-on now supports:
 
 ## Install
 
-1. Copy the `activity_rings_dashboard` folder into your Anki `addons21` directory.
+1. Copy the `anki_activity_rings` folder into your Anki `addons21` directory.
 2. Restart Anki.
 3. Open `Tools -> Activity Rings`.
 
@@ -27,14 +27,7 @@ On macOS, the add-on folder is usually:
 
 `~/Library/Application Support/Anki2/addons21`
 
-## Repository Hygiene
-
-This repo intentionally treats shipped defaults and user state separately:
-
-- `config.json` contains the default shipped configuration
-- `meta.json` is user-specific runtime state and should not be committed or published
-
-That matches how Anki stores add-on config overrides.
+Alternatively, download and double click the `activity-rings.ankiaddon` to install the addon. 
 
 ## Use The Visual Editor
 
@@ -235,56 +228,8 @@ The visual editor is the main workflow, but JSON config still works.
 }
 ```
 
-## How Dashboard Injection Works
 
-The dashboard is injected as ordinary Anki web content rather than a giant native panel.
 
-Hooks used:
-
-- `deck_browser_will_render_content`
-- `overview_will_render_content`
-- `state_did_change`
-- `sync_did_finish`
-- `theme_did_change`
-- `webview_did_receive_js_message`
-
-`dashboard.py` renders HTML cards into the normal deck browser / overview content area. The card renderer lives in `web.py`, and the same renderer is reused in the settings preview via `AnkiWebView`.
-
-## Performance Notes
-
-- stats are collected asynchronously with `QueryOp`
-- the dashboard never does heavy collection work during paint
-- results are cached with a configurable TTL
-- sources are deduplicated before querying
-- search-based metrics are cached per unique search expression
-- built-in aggregate metrics reuse preloaded card rows where possible
-
-For large collections, enable `global.debug_timing` to log timing details.
-
-## Testing Checklist
-
-Use these cases after installing the add-on:
-
-1. A large tag or search source with many cards
-2. An empty tag
-3. A deleted or renamed tag
-4. A widget where all cards are suspended
-5. A widget mixing young and mature review cards
-6. Multiple widgets with the window narrowed so cards wrap
-7. Light mode, dark mode, and a custom background theme
-8. Card click-through and metric click-through into the Browser
-
-## Module Layout
-
-- `__init__.py`: add-on entry point
-- `dashboard.py`: hook registration, async refresh, Browser bridge
-- `config.py`: schema, defaults, migration, normalization
-- `metrics.py`: extensible built-in metric registry
-- `stats.py`: source resolution, numerator/denominator aggregation, caching helpers
-- `settings.py`: visual editor, tag picker, JSON editor, live preview
-- `web.py`: dashboard and preview renderer
-- `config.json`: default config
-- `config.md`: config reference
 
 ## Packaging
 
