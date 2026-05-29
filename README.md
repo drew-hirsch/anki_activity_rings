@@ -229,30 +229,3 @@ The visual editor is the main workflow, but JSON config still works.
   ]
 }
 ```
-
-
-
-
-## Packaging
-
-To build a release-ready `.ankiaddon` artifact:
-
-```bash
-python3 scripts/build_ankiaddon.py
-```
-
-That produces:
-
-```text
-dist/activity-rings.ankiaddon
-```
-
-The build script validates the JSON files, compiles the Python files, and excludes runtime junk like `meta.json` and `__pycache__`.
-
-## Publishing
-
-GitHub and AnkiWeb release notes are easiest to derive from this README plus:
-
-- [PUBLISHING.md](PUBLISHING.md)
-
-For AnkiWeb specifically, upload the generated `.ankiaddon` file, not a zip that contains the top-level addon folder.
