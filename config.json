@@ -1,0 +1,232 @@
+{
+  "global": {
+    "show_on_screens": [
+      "deckBrowser"
+    ],
+    "panel_margin": 18,
+    "panel_spacing": 16,
+    "match_widget_sizes": true,
+    "cache_ttl_seconds": 30,
+    "hide_when_no_widgets": false,
+    "dashboard_position": "top",
+    "theme": "auto",
+    "palette": "soft",
+    "default_card_style": "native",
+    "debug_timing": false
+  },
+  "widgets": [
+    {
+      "id": "todays-progress",
+      "title": "Today's Progress",
+      "source": {
+        "type": "today",
+        "include_children": false,
+        "scope": "all"
+      },
+      "layout": {
+        "mode": "compact",
+        "title_position": "inside",
+        "show_source_subtitle": false,
+        "show_total_cards": true,
+        "show_legend": true,
+        "show_counts": true,
+        "show_percentages": true,
+        "ring_size": 210,
+        "ring_thickness": 18,
+        "ring_gap": 9,
+        "card_min_width": 290,
+        "card_max_width": 390,
+        "card_aspect_ratio": 1.08,
+        "card_padding": 18,
+        "center_label_mode": "primary_percent",
+        "primary_ring_id": "today-review-completed",
+        "center_label_text": "Done",
+        "center_value_font_size": 25,
+        "center_value_auto_fit": true,
+        "center_caption_font_size": 11,
+        "center_caption_auto_fit": true,
+        "click_action": "source",
+        "ring_click_action": "numerator"
+      },
+      "style": {
+        "background_color": "auto",
+        "card_opacity": 0.92,
+        "border_color": "auto",
+        "shadow_enabled": true,
+        "track_color": "auto",
+        "use_glow": false
+      },
+      "rings": [
+        {
+          "id": "today-review-completed",
+          "enabled": true,
+          "label": "Total Cards",
+          "metric": { "type": "builtin", "name": "today_all_completed" },
+          "denominator": { "type": "builtin", "name": "today_all_total" },
+          "color": "auto",
+          "track_color": "auto"
+        },
+        {
+          "id": "review-done-copy",
+          "enabled": true,
+          "label": "Review Cards",
+          "metric": { "type": "builtin", "name": "today_review_completed" },
+          "denominator": { "type": "builtin", "name": "today_review_total" },
+          "color": "auto",
+          "track_color": "auto"
+        },
+        {
+          "id": "today-new-completed",
+          "enabled": true,
+          "label": "New Cards",
+          "metric": { "type": "builtin", "name": "today_new_completed" },
+          "denominator": { "type": "builtin", "name": "today_new_total" },
+          "color": "auto",
+          "track_color": "auto"
+        }
+      ]
+    },
+    {
+      "id": "tag-2",
+      "title": "Click to Configure",
+      "source": {
+        "type": "tag",
+        "include_children": true,
+        "tag": ""
+      },
+      "layout": {
+        "mode": "compact",
+        "title_position": "inside",
+        "show_source_subtitle": false,
+        "show_total_cards": true,
+        "show_legend": true,
+        "show_counts": true,
+        "show_percentages": true,
+        "ring_size": 204,
+        "ring_thickness": 18,
+        "ring_gap": 8,
+        "card_min_width": 290,
+        "card_max_width": 390,
+        "card_aspect_ratio": 1.08,
+        "card_padding": 18,
+        "center_label_mode": "primary_percent",
+        "primary_ring_id": "unsuspended",
+        "center_label_text": "",
+        "center_value_font_size": 25,
+        "center_value_auto_fit": true,
+        "center_caption_font_size": 11,
+        "center_caption_auto_fit": true,
+        "click_action": "source",
+        "ring_click_action": "numerator"
+      },
+      "style": {
+        "background_color": "auto",
+        "card_opacity": 0.92,
+        "border_color": "auto",
+        "shadow_enabled": true,
+        "track_color": "auto",
+        "use_glow": false
+      },
+      "rings": [
+        {
+          "id": "mature",
+          "enabled": true,
+          "label": "Mature",
+          "metric": { "type": "builtin", "name": "mature" },
+          "denominator": { "type": "builtin", "name": "unsuspended" },
+          "color": "auto",
+          "track_color": "auto"
+        },
+        {
+          "id": "young",
+          "enabled": true,
+          "label": "Learning",
+          "metric": { "type": "builtin", "name": "young" },
+          "denominator": { "type": "builtin", "name": "unsuspended" },
+          "color": "auto",
+          "track_color": "auto"
+        },
+        {
+          "id": "unsuspended",
+          "enabled": true,
+          "label": "Active",
+          "metric": { "type": "builtin", "name": "unsuspended" },
+          "denominator": { "type": "builtin", "name": "all" },
+          "color": "auto",
+          "track_color": "auto"
+        }
+      ]
+    },
+    {
+      "id": "tag-3",
+      "title": "Click to Configure",
+      "source": {
+        "type": "tag",
+        "include_children": true,
+        "tag": ""
+      },
+      "layout": {
+        "mode": "compact",
+        "title_position": "inside",
+        "show_source_subtitle": false,
+        "show_total_cards": true,
+        "show_legend": true,
+        "show_counts": true,
+        "show_percentages": true,
+        "ring_size": 204,
+        "ring_thickness": 18,
+        "ring_gap": 8,
+        "card_min_width": 290,
+        "card_max_width": 390,
+        "card_aspect_ratio": 1.08,
+        "card_padding": 18,
+        "center_label_mode": "primary_percent",
+        "primary_ring_id": "unsuspended",
+        "center_label_text": "",
+        "center_value_font_size": 25,
+        "center_value_auto_fit": true,
+        "center_caption_font_size": 11,
+        "center_caption_auto_fit": true,
+        "click_action": "source",
+        "ring_click_action": "numerator"
+      },
+      "style": {
+        "background_color": "auto",
+        "card_opacity": 0.92,
+        "border_color": "auto",
+        "shadow_enabled": true,
+        "track_color": "auto",
+        "use_glow": false
+      },
+      "rings": [
+        {
+          "id": "mature",
+          "enabled": true,
+          "label": "Mature",
+          "metric": { "type": "builtin", "name": "mature" },
+          "denominator": { "type": "builtin", "name": "unsuspended" },
+          "color": "auto",
+          "track_color": "auto"
+        },
+        {
+          "id": "young",
+          "enabled": true,
+          "label": "Learning",
+          "metric": { "type": "builtin", "name": "young" },
+          "denominator": { "type": "builtin", "name": "unsuspended" },
+          "color": "auto",
+          "track_color": "auto"
+        },
+        {
+          "id": "unsuspended",
+          "enabled": true,
+          "label": "Active",
+          "metric": { "type": "builtin", "name": "unsuspended" },
+          "denominator": { "type": "builtin", "name": "all" },
+          "color": "auto",
+          "track_color": "auto"
+        }
+      ]
+    }
+  ]
+}
