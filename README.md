@@ -135,7 +135,6 @@ The visual editor is the main workflow, but JSON config still works.
 
 - `Edit JSON...` is available inside the visual editor
 - malformed JSON is normalized safely where possible
-- missing fields are filled with defaults
 - invalid widgets are repaired or skipped with warnings instead of crashing Anki
 
 ## Example JSON
