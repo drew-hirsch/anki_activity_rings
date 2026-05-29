@@ -2,7 +2,7 @@
 
 `Activity Rings` is an Anki desktop add-on that adds configurable Apple Fitness-style ring widgets to the deck browser and deck overview screens.
 
-![Activity Rings screenshot](images/screenshot.png)
+![Activity Rings screenshot](images/screenshot1.png)
 
 Compatibility target:
 
